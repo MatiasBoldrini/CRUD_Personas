@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from persona import Persona
+from .persona import *
 
 class Test(unittest.TestCase):
 
