@@ -6,7 +6,7 @@ class Persona:
     def __init__(self):
         self.personas = {}
         self.database_directory = (
-            str(pathlib.Path().resolve())+'/6_Persona/valores.txt'
+            'valores.txt'
         )
         if not self.file_exists():  # El archivo puede no estar creado
             with open(self.database_directory, mode='a'):  # crear archivo
