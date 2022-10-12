@@ -1,6 +1,4 @@
 from os.path import exists
-import pathlib
-
 
 class Persona:
     def __init__(self):
@@ -8,11 +6,6 @@ class Persona:
         self.database_directory = (
             'valores.txt'
         )
-        if not self.file_exists():  # El archivo puede no estar creado
-            with open(self.database_directory, mode='a'):  # crear archivo
-                pass
-    def file_exists(self):
-        return exists(self.database_directory)
 
     def add_Users(self):
         if self.check_input() and not self.is_user_in_DB(self.dni):
@@ -74,26 +67,3 @@ class Persona:
         return self.personas.get(dni)
 
 
-def showMainMenu(option=0):
-    database = Persona()
-    option = input(
-        """
-    Seleccione una opcion:
-        1) Agregar Usuarios
-        2) Eliminar Usuarios
-        3) Modificar Usuarios
-        4) Buscar Usuarios
-    -> """
-    )
-    if option == "1":
-        database.add_Users()
-    if option == "2":
-        database.delete_Users(input("Ingrese un DNI : "))
-    if option == "3":
-        database.modify_Users(input("Ingrese un DNI : "))
-    if option == "4":
-        print(database.get_User_Attributes(input("Ingrese un DNI : ")))
-
-
-if __name__ == "__main__":
-    showMainMenu()

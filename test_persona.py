@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch
 from persona import *
 
-class Test(unittest.TestCase):
+class Test_backend(unittest.TestCase):
 
     @patch("builtins.input", side_effect=["Matias", "Boldrini", "44438082"])
     def testCase_add_user(self, mock_inputs):
