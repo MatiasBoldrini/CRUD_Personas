@@ -5,7 +5,6 @@ from persona import *
 
 
 class Test_backend(unittest.TestCase):
-
     @patch("builtins.input", side_effect=["Matias", "Boldrini", "44438082"])
     def testCase_add_user(self, mock_inputs):
         database = Persona()
@@ -44,8 +43,8 @@ class Test_backend(unittest.TestCase):
 
     def testCase_search_user_dni(self):
         database = Persona()
-        result = database.get_User_Attributes('44438082')
-        self.assertEqual(result, ['44438082', 'Linus', 'Torvalds'])
+        result = database.get_User_Attributes("44438082")
+        self.assertEqual(result, ["44438082", "Linus", "Torvalds"])
 
     @patch("builtins.input", side_effect=["Matias", "Boldrini", "324"])
     def testCase_check_input_True(self, mock_inputs):
