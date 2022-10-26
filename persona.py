@@ -1,4 +1,3 @@
-from os.path import exists
 
 class Persona:
     def __init__(self):
